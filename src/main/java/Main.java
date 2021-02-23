@@ -8,22 +8,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-           try {
-               check(arr);
-           } catch (MyArraySizeException e) {
-               System.out.println(" Введен не верный размер массива ");
-           }
-           try {
-               check2(arr);
-           } catch (MyArrayDataException e) {
-               System.out.println(e.getMessage());
+        try {
+            check(arr);
+        } catch (MyArraySizeException e) {
+            System.out.println(" Введен не верный размер массива ");
+        }
+        try {
+            check2(arr);
+        } catch (MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
 
-
-           }
     }
 
 
-    public static void check(String[][] arra) throws MyArraySizeException {
+    public static void check(String[][] arr) throws MyArraySizeException {
         if (arr.length != 4) {
             throw new MyArraySizeException();
         }
@@ -48,7 +47,10 @@ public class Main {
                     throw new MyArrayDataException(" Не верное значение в ячейке: " + i + "x" + j);
                 }
             }
-        }System.out.println(sum);
+        }
+        if (arr.length == 4) {
+            System.out.println(" Сумма элементов массива: " + sum);
+        }
     }
 }
 
